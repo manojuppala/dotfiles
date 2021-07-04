@@ -183,3 +183,9 @@ fi
 
 #managing dotfiles using a git bare repository
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+
+#alias to activate conda base environment
+alias base='conda activate base'
+
+#alias to output the weather report
+alias weather='curl wttr.in'

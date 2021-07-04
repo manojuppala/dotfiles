@@ -58,7 +58,7 @@ class Color(DefaultColor):
     GIT_STASH_FG = 0
 
     VIRTUAL_ENV_BG = 35  # a mid-tone green
-    VIRTUAL_ENV_FG = 00
+    VIRTUAL_ENV_FG = 236
 
     BATTERY_NORMAL_BG = 22
     BATTERY_NORMAL_FG = 7
