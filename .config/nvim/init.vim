@@ -1,7 +1,7 @@
 syntax on
 
 "general settings
-set mouse=a
+set mouse=v
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -15,6 +15,7 @@ set nobackup
 set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
+set clipboard+=unnamedplus
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey

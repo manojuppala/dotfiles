@@ -92,10 +92,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -104,6 +100,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# Add and "alert" alias for long running commands. Use like so:
+# sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -136,11 +136,12 @@ bind TAB:menu-complete
 #JAVA_HOME and PATH for open JDK 8
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export PATH=${JAVA_HOME}/bin:$PATH
-export TERM=xterm-color
+export TERM=xterm-kitty
 
 # Add go to path
 export PATH=$PATH:/usr/local/go/bin
 
+#Add apache flume to path
 export FLUME_HOME="/home/manoj/apache-flume-1.9.0-bin"
 export PATH=$PATH:$FLUME_HOME/bin
 
@@ -170,9 +171,6 @@ export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\
 
 export PATH="~/mongodb-linux-x86_64-enterprise-ubuntu2004-4.4.6/bin:$PATH"
 
-#this is an alias used to deactivate venv and cd to home
-alias empty="deactivate; cd"
-
 #inorder for powerline to work
 function _update_ps1() {
     PS1=$(powerline-shell $?)
@@ -182,14 +180,13 @@ if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
     PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-#managing dotfiles using a git bare repository
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+#bind Ctrl+m to neomutt
+bind -x '"\C-g":mutt'
 
-#alias to activate conda base environment
-alias base='conda activate base'
+#bind Ctrl+f to ranger file manager
+bind -x '"\C-p":ranger'
 
-#alias to output the weather report
-alias weather='curl wttr.in'
+#print user@hostname
+echo -e "\e[1;33m$(figlet -c $(whoami)@$(hostname))"
 
-#alias to display images in kitty terminal 
-alias icat="kitty +kitten icat"
+
