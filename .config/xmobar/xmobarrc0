@@ -1,0 +1,59 @@
+Config { font = "xft:Ubuntu Mono:pixelsize=16:antialias=true:hinting=true"
+       , additionalFonts = ["xft:Ubuntu Nerd Font Complete:pixelsize=16:antialias=true:hinting=true"]
+       , borderColor = "#3c3836"
+       , border = NoBorder
+       , bgColor = "#3c3836"
+       , fgColor = "#d5c4a1"
+       , position        = Top
+       , alpha           = 240
+       , textOffset      = 14
+       , textOffsets     = [19]
+       , lowerOnStart    = True
+       , persistent      = True
+       , commands = [
+                    -- weather status
+                    Run Weather "VOVZ" ["-t","<tempC>°C",
+                                          "-L","18","-H","25",
+                                          "--normal","green",
+                                          "--high","red",
+                                          "--low","lightblue"] 36000
+                    -- network activity monitor (dynamic interface resolution)
+                    ,Run DynNetwork     [ "--template" , "<dev>: <tx>kB/s|<rx>kB/s"
+                             , "--Low"      , "1000"       -- units: B/s
+                             , "--High"     , "5000"       -- units: B/s
+                             , "--low"      , "#07DB9C"
+                             , "--normal"   , "#049CCF"
+                             , "--high"     , "#CF20E8"
+                             ] 10
+                    -- Ram used number and percent
+                    , Run DiskU [("/", "hdd: <free> free")] [] 60
+                    -- Cpu usage in percent %cpu%
+                    , Run Cpu ["-t", "<fn=2>\xf2db</fn>  cpu: (<total>%)","-H","50","--high","red"] 20
+                    -- date and time
+                    , Run Date "<fc=#EBEBEB>%a, %_d %b</fc> | <fc=#A578EA>%I:%M %p</fc>" "datetime" 10
+                    -- battery monitor
+                    , Run Battery        [ "--template" , "Bat:<acstatus>"
+                             , "--Low"      , "10"        -- units: %
+                             , "--High"     , "80"        -- units: %
+                             , "--low"      , "#CF20E8"
+                             , "--normal"   , "#049CCF"
+                             , "--high"     , "#07DB9C"
+
+                             , "--" -- battery specific options
+                                       -- discharging status
+                                       , "-o"	, "<left>% (<timeleft>)"
+                                       -- AC "on" status
+                                       , "-O"	, "<fc=#049CCF>Charging</fc> (<left>%)"
+                                       -- charged status
+                                       , "-i"	, "<fc=#07DB9C>Charged</fc>"
+                             ] 50
+                    --wireless connection
+                    , Run Wireless "wlp3s0" [ "-t", "WIFI:<essid>" ] 10
+                    -- Workspaces
+	                , Run UnsafeStdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %battery% | %wlp3s0% | %dynnetwork% }\
+                    \{ %disku% | %VOVZ% | %datetime%"
+       }

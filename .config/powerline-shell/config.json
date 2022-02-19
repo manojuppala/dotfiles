@@ -1,0 +1,17 @@
+{
+  "segments": [
+    "virtual_env",
+    "username",
+    "ssh",
+    "cwd",
+    "git",
+    "hg",
+    "jobs",
+    "root"
+  ],
+  "cwd":{
+    "max_depth": 2,
+    "max_dir_size":12
+  },
+  "theme": "~/.config/powerline-shell/themes/basic.py"
+}
