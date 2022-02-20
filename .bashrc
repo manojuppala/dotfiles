@@ -25,6 +25,7 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 #SHOPT
+shopt -s nullglob
 # autocorrects cd misspellings
 shopt -s cdspell
 # append to the history file, don't overwrite it

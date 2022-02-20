@@ -24,7 +24,7 @@ alias base='conda activate base'
 alias bshexe='chmod u+x'
 
 #to manage dotfiles repo using git
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias conf='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
 
 # to deactivate and cd while in a workspace
 alias empty='deactivate; cd'
