@@ -51,7 +51,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Schemes
+"Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Schemes
+Plug 'https://github.com/manojuppala/vim-code-blue' "code-blue color theme
 Plug 'https://github.com/neoclide/coc.nvim' " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
@@ -161,12 +162,28 @@ autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/skeleton.cpp
 autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
 
 "vim colorscheme
-"colorscheme purify
-"colorscheme abstract
-colorscheme gruvbox
+"colorscheme gruvbox
+colorscheme code-blue
 
 "transparent background
-hi Normal guibg=NONE ctermbg=NONE
+let t:is_transparent = 1
+if t:is_transparent == 1
+    hi Normal guibg=NONE ctermbg=NONE
+else
+    set background=dark
+endif
+
+"toggle transparent background
+function! Toggle_transparent()
+    if t:is_transparent == 1        
+        hi Normal guibg=NONE ctermbg=NONE        
+        let t:is_transparent = 0
+    else
+        set background=dark
+        let t:is_transparent = 1
+    endif
+endfunction
+nnoremap <C-b> : call Toggle_transparent()<CR>
 
 "toggle between relative and absolute line numbers
 augroup numbertoggle

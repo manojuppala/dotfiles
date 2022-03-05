@@ -1,4 +1,7 @@
 <h1 align="center">Dotfiles</h1>
+<p align="center">
+  <img src="./dotfiles.png" alt="dotfiles" width="120"/>
+</p>
 
 ## What Are Dotfiles?
 
