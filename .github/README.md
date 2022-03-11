@@ -7,6 +7,14 @@
 
 Dotfiles are the customization files that are used to personalize your Linux or other Unix-based system. This repository contains my personal dotfiles. They are stored here for convenience so that I may quickly access them on new machines or new installs. Also, you may find some of my configurations helpful in customizing your own dotfiles.
 
+## Installation
+
+```
+curl -s https://gist.githubusercontent.com/manojuppala/15ff7820315549bf1baac787f5f63777/raw/install.sh | bash -s [options]
+```
+
+available _[options]_ : dotfiles, neovim, apps, all
+
 ## My Setup
 
 - **Shell:** [Bash](https://github.com/manojuppala/dotfiles/blob/master/.bashrc)
@@ -23,6 +31,28 @@ Dotfiles are the customization files that are used to personalize your Linux or 
 **_Install_** [**_Kitty_**](https://sw.kovidgoyal.net/kitty/) **_using `sudo apt install kitty`_**<br>
 
 > **Note:** 1. inorder to display images in the the terminal install imagemagick using **_`sudo apt install imagemagick`_**<br> 2. display images using `kitty +kitten icat <image_name>` <br> 3. install kitty themes from [here](https://github.com/dexpota/kitty-themes)
+
+_Install_ my Kitty color theme code-blue using<br>
+
+1. Download code-blue color theme:
+
+   ```bash
+   THEME=https://raw.githubusercontent.com/manojuppala/dotfiles/master/.config/kitty/kitty-themes/themes/code-blue.conf
+   wget "$THEME" -P ~/.config/kitty/kitty-themes/themes
+   ```
+
+2. Create a symlink:
+
+   ```bash
+   cd ~/.config/kitty
+   ln -s ./kitty-themes/themes/code-blue.conf ~/.config/kitty/theme.conf
+   ```
+
+3. Add this line to your kitty.conf configuration file:
+
+   ```
+   include ./theme.conf
+   ```
 
 ## **Neovim** <u>[_(init.vim)_](https://github.com/manojuppala/dotfiles/blob/master/.config/nvim/init.vim)</u>
 

@@ -2,7 +2,7 @@
 " /  ' \/ _ `/ _ \/ _ \  / / / // / _ \/ _ \/ _ `/ / _ `/
 "/_/_/_/\_,_/_//_/\___/_/ /  \_,_/ .__/ .__/\_,_/_/\_,_/ 
 "                    |___/      /_/  /_/                 
-" website: https://manojuppala.ml
+" website: https://manojuppala.com
 " github: https://github.com/manojuppala
 " A customized init.vim for neovim (https://neovim.io/)
 
@@ -24,13 +24,13 @@ set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch
 set clipboard+=unnamedplus
-"set relativenumber
-"set norelativenumber
 set hlsearch
 set hidden
 set exrc
 set scrolloff=8
 set showtabline=2
+"set relativenumber
+"set norelativenumber
 
 set guifont=Fira\ Code:h12
 set encoding=UTF-8
@@ -43,15 +43,12 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 "plugins
 call plug#begin()
 Plug 'mbbill/undotree'
-"Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/scrooloose/nerdtree'
-"Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-"Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Schemes
 Plug 'https://github.com/manojuppala/vim-code-blue' "code-blue color theme
 Plug 'https://github.com/neoclide/coc.nvim' " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
@@ -60,13 +57,15 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/vim-scripts/dbext.vim' " SQL Completion
 Plug 'https://github.com/octol/vim-cpp-enhanced-highlight' " C++ Syntax
-"Plug 'https://tpope/vim-fugitive' "allows git commands in vim session
 Plug 'airblade/vim-gitgutter' "shows git changes in gutter
-"Plug 'nvim-telescope/telescope.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-" A Vim Plugin for Lively Previewing LaTeX PDF Output
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " A Vim Plugin for Lively Previewing LaTeX PDF Output
+"Plug 'https://github.com/preservim/nerdtree' " NerdTree
+"Plug 'nvim-telescope/telescope.nvim'
+"Plug 'https://tpope/vim-fugitive' "allows git commands in vim session
+"Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Schemes
+"Plug 'tsony-tsonev/nerdtree-git-plugin'
 call plug#end()
 
 let g:kite_completions=0
