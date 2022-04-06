@@ -29,8 +29,6 @@ set hidden
 set exrc
 set scrolloff=8
 set showtabline=2
-"set relativenumber
-"set norelativenumber
 
 set guifont=Fira\ Code:h12
 set encoding=UTF-8
@@ -49,7 +47,6 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
-Plug 'https://github.com/manojuppala/vim-code-blue' "code-blue color theme
 Plug 'https://github.com/neoclide/coc.nvim' " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
@@ -60,12 +57,13 @@ Plug 'https://github.com/octol/vim-cpp-enhanced-highlight' " C++ Syntax
 Plug 'airblade/vim-gitgutter' "shows git changes in gutter
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' } " A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plug 'xuhdev/vim-latex-live-preview' " A Vim Plugin for Lively Previewing LaTeX PDF Output
 "Plug 'https://github.com/preservim/nerdtree' " NerdTree
 "Plug 'nvim-telescope/telescope.nvim'
 "Plug 'https://tpope/vim-fugitive' "allows git commands in vim session
 "Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Schemes
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
+Plug 'https://github.com/dracula/vim'
 call plug#end()
 
 let g:kite_completions=0
@@ -161,28 +159,10 @@ autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/skeleton.cpp
 autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
 
 "vim colorscheme
-"colorscheme gruvbox
-colorscheme code-blue
+colorscheme dracula
 
 "transparent background
-let t:is_transparent = 1
-if t:is_transparent == 1
-    hi Normal guibg=NONE ctermbg=NONE
-else
-    set background=dark
-endif
-
-"toggle transparent background
-function! Toggle_transparent()
-    if t:is_transparent == 1        
-        hi Normal guibg=NONE ctermbg=NONE        
-        let t:is_transparent = 0
-    else
-        set background=dark
-        let t:is_transparent = 1
-    endif
-endfunction
-nnoremap <C-b> : call Toggle_transparent()<CR>
+hi Normal guibg=NONE ctermbg=NONE
 
 "toggle between relative and absolute line numbers
 augroup numbertoggle
