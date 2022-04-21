@@ -61,9 +61,7 @@ Plug 'xuhdev/vim-latex-live-preview' " A Vim Plugin for Lively Previewing LaTeX 
 "Plug 'https://github.com/preservim/nerdtree' " NerdTree
 "Plug 'nvim-telescope/telescope.nvim'
 "Plug 'https://tpope/vim-fugitive' "allows git commands in vim session
-"Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Schemes
 "Plug 'tsony-tsonev/nerdtree-git-plugin'
-Plug 'https://github.com/dracula/vim'
 call plug#end()
 
 let g:kite_completions=0
@@ -157,12 +155,6 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 "boiler plate code
 autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/skeleton.cpp
 autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
-
-"vim colorscheme
-colorscheme dracula
-
-"transparent background
-hi Normal guibg=NONE ctermbg=NONE
 
 "toggle between relative and absolute line numbers
 augroup numbertoggle

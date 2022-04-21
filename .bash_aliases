@@ -2,7 +2,7 @@
 # /  ' \/ _ `/ _ \/ _ \  / / / // / _ \/ _ \/ _ `/ / _ `/
 #/_/_/_/\_,_/_//_/\___/_/ /  \_,_/ .__/ .__/\_,_/_/\_,_/ 
 #                    |___/      /_/  /_/                 
-# website: https://manojuppala.ml
+# website: https://manojuppala.com
 # github: https://github.com/manojuppala
 # My .bash_aliases, this file consists all my custom aliases.
 
@@ -111,3 +111,7 @@ alias l.='exa -a | egrep "^\."'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# flask run
+alias flaskrun='export FLASK_APP=flaskapp.py && export FLASK_DEBUG=1 && export FLASK_ENV=development && flask run'
+
