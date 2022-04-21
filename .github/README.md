@@ -37,7 +37,7 @@ _Install_ my Kitty color theme code-blue using<br>
 1. Download code-blue color theme:
 
    ```bash
-   THEME=https://raw.githubusercontent.com/manojuppala/dotfiles/master/.config/kitty/kitty-themes/themes/code-blue.conf
+   THEME=https://raw.githubusercontent.com/manojuppala/dotfiles/master/.config/kitty/kitty-themes/themes/OneDark.conf
    wget "$THEME" -P ~/.config/kitty/kitty-themes/themes
    ```
 
@@ -45,7 +45,7 @@ _Install_ my Kitty color theme code-blue using<br>
 
    ```bash
    cd ~/.config/kitty
-   ln -s ./kitty-themes/themes/code-blue.conf ~/.config/kitty/theme.conf
+   ln -s ./kitty-themes/themes/OneDark.conf ~/.config/kitty/theme.conf
    ```
 
 3. Add this line to your kitty.conf configuration file:

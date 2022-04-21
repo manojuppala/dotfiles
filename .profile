@@ -2,7 +2,7 @@
 # /  ' \/ _ `/ _ \/ _ \  / / / // / _ \/ _ \/ _ `/ / _ `/
 #/_/_/_/\_,_/_//_/\___/_/ /  \_,_/ .__/ .__/\_,_/_/\_,_/ 
 #                    |___/      /_/  /_/                 
-# website: https://manojuppala.ml
+# website: https://manojuppala.com
 # github: https://github.com/manojuppala
 # My .profile Not much to see here; just some pretty standard stuff.
 
