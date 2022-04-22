@@ -28,7 +28,7 @@ configuration {
 window {
   width: 40%;
   border-radius: 5;
-  border: 1px solid;
+  border: 2px solid;
   border-color: #212329;
 }
 

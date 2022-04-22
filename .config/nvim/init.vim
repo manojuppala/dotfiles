@@ -58,6 +58,7 @@ Plug 'airblade/vim-gitgutter' "shows git changes in gutter
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'xuhdev/vim-latex-live-preview' " A Vim Plugin for Lively Previewing LaTeX PDF Output
+Plug 'https://github.com/joshdick/onedark.vim'
 "Plug 'https://github.com/preservim/nerdtree' " NerdTree
 "Plug 'nvim-telescope/telescope.nvim'
 "Plug 'https://tpope/vim-fugitive' "allows git commands in vim session
@@ -155,6 +156,9 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 "boiler plate code
 autocmd BufNewFile *.cpp 0r ~/.config/nvim/templates/skeleton.cpp
 autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
+
+"vim colorscheme
+colorscheme onedark
 
 "toggle between relative and absolute line numbers
 augroup numbertoggle
