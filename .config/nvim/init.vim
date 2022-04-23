@@ -29,6 +29,7 @@ set hidden
 set exrc
 set scrolloff=8
 set showtabline=2
+set termguicolors
 
 set guifont=Fira\ Code:h12
 set encoding=UTF-8
@@ -58,11 +59,7 @@ Plug 'airblade/vim-gitgutter' "shows git changes in gutter
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'xuhdev/vim-latex-live-preview' " A Vim Plugin for Lively Previewing LaTeX PDF Output
-Plug 'https://github.com/joshdick/onedark.vim'
-"Plug 'https://github.com/preservim/nerdtree' " NerdTree
-"Plug 'nvim-telescope/telescope.nvim'
-"Plug 'https://tpope/vim-fugitive' "allows git commands in vim session
-"Plug 'tsony-tsonev/nerdtree-git-plugin'
+Plug 'https://github.com/joshdick/onedark.vim' " My favourite onedark color theme
 call plug#end()
 
 let g:kite_completions=0
@@ -159,9 +156,6 @@ autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
 
 "vim colorscheme
 colorscheme onedark
-
-"transparent background
-hi Normal guibg=NONE ctermbg=NONE
 
 "toggle between relative and absolute line numbers
 augroup numbertoggle
