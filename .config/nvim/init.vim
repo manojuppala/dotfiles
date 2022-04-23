@@ -160,6 +160,9 @@ autocmd BufNewFile *.html 0r ~/.config/nvim/templates/skeleton.html
 "vim colorscheme
 colorscheme onedark
 
+"transparent background
+hi Normal guibg=NONE ctermbg=NONE
+
 "toggle between relative and absolute line numbers
 augroup numbertoggle
   autocmd!
